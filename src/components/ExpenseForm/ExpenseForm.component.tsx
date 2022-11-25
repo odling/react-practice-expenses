@@ -16,6 +16,9 @@ export const ExpenseForm: TypeDef = () => {
         <label>Date</label>
         <input type="date" min="2019-01-01" max="2022-31-12" />
       </div>
+      <div className="new-expense__actions">
+        <button>Add Expense</button>
+      </div>
     </div>
   );
 };

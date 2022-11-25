@@ -7,7 +7,6 @@ export const NewExpense: TypeDef = () => {
   return (
     <Card className="new-expense">
       <ExpenseForm />
-      <button>Add Expense</button>
     </Card>
   );
 };
