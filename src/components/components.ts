@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 /* eslint-disable no-redeclare */
 import { Component } from "../core/core";
+import { NewExpense } from "./NewExpense/NewExpense.component";
 
 namespace ExpenseItem {
   export type Props = {
@@ -43,3 +44,19 @@ namespace Card {
 }
 
 export type Card = Component.GenericComponent<Card.Props>;
+
+namespace NewExpense {
+  export type Props = {
+    className?: string;
+  };
+}
+
+export type NewExpense = Component.GenericComponent<NewExpense.Props>;
+
+namespace ExpenseForm {
+  export type Props = {
+    className?: string;
+  };
+}
+
+export type ExpenseForm = Component.GenericComponent<ExpenseForm.Props>;
