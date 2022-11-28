@@ -4,3 +4,4 @@ export { Expenses } from "./Expenses/Expenses.component";
 export { Card } from "./Card/Card.component";
 export { NewExpense } from "./NewExpense/NewExpense.component";
 export { ExpenseForm } from "./ExpenseForm/ExpenseForm.component";
+export { ExpensesFilter } from "./ExpensesFilter/ExpensesFilter.component";
