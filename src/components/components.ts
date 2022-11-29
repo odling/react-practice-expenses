@@ -59,7 +59,7 @@ namespace ExpenseForm {
 export type ExpenseForm = Component.GenericComponent<ExpenseForm.Props>;
 
 export namespace DropdownInput {
-  type Option = {
+  export type Option = {
     value: any;
     label: string;
   };

@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { ExpenseItem, Card, DropdownInput } from "../../components";
-import { Expenses as TypeDef } from "../components";
+import {
+  Expenses as TypeDef,
+  DropdownInput as DropdownType
+} from "../components";
 import "./Expenses.styles.css";
 
-const yearOptions = [
+const yearOptions: DropdownType.Option[] = [
   {
     value: null,
     label: "All"
