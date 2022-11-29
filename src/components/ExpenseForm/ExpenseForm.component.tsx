@@ -8,7 +8,8 @@ const initialFormValues = {
   date: ""
 };
 
-export const ExpenseForm: TypeDef = () => {
+export const ExpenseForm: TypeDef = (props) => {
+  const { onSubmit } = props;
   const [formInputs, setFormInputs] = useState<typeof initialFormValues>(
     initialFormValues
   );
@@ -23,7 +24,14 @@ export const ExpenseForm: TypeDef = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(formInputs);
+    onSubmit({
+      newExpense: {
+        title: formInputs.title,
+        date: new Date(formInputs.date),
+        amount: parseFloat(formInputs.amount),
+        id: Math.random().toString()
+      }
+    });
     setFormInputs(initialFormValues);
   };
 

@@ -6,3 +6,7 @@ export namespace Component {
 }
 
 export type ValueOf<T> = T[keyof T];
+
+export namespace Action {
+  export type GenericAction<P> = (props: P) => void;
+}

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-namespace */
 /* eslint-disable no-redeclare */
-import { Component } from "../core/core";
+import { Action, Component } from "../core/core";
 
 namespace ExpenseItem {
   export type Props = {
@@ -19,8 +19,8 @@ namespace ExpenseDate {
 
 export type ExpenseDate = Component.GenericComponent<ExpenseDate.Props>;
 
-namespace Expenses {
-  type Expense = {
+export namespace Expenses {
+  export type Expense = {
     id: string;
     title: string;
     amount: number;
@@ -39,20 +39,34 @@ namespace Card {
 
 export type Card = Component.GenericComponent<Card.Props>;
 
-namespace NewExpense {
-  export type Props = {};
+export namespace NewExpense {
+  export type onAddExpenseProps = {
+    newExpense: Expenses.Expense;
+  };
+  export type Props = {
+    onAddExpense: Action.GenericAction<onAddExpenseProps>;
+  };
 }
 
 export type NewExpense = Component.GenericComponent<NewExpense.Props>;
 
 namespace ExpenseForm {
-  export type Props = {};
+  export type Props = {
+    onSubmit: NewExpense.Props["onAddExpense"];
+  };
 }
 
 export type ExpenseForm = Component.GenericComponent<ExpenseForm.Props>;
 
-namespace ExpensesFilter {
-  export type Props = {};
+export namespace ExpensesFilter {
+  export type Year = "2022" | "2021" | "2020" | "2019";
+
+  export type onFilterChangeProps = {
+    year: string;
+  };
+  export type Props = {
+    onFilterChange: Action.GenericAction<onFilterChangeProps>;
+  };
 }
 
 export type ExpensesFilter = Component.GenericComponent<ExpensesFilter.Props>;
