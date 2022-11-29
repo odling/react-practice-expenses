@@ -58,15 +58,21 @@ namespace ExpenseForm {
 
 export type ExpenseForm = Component.GenericComponent<ExpenseForm.Props>;
 
-export namespace ExpensesFilter {
-  export type Year = "2022" | "2021" | "2020" | "2019";
-
-  export type onFilterChangeProps = {
-    year: string;
+export namespace DropdownInput {
+  type Option = {
+    value: any;
+    label: string;
   };
+  export type onChangeProps = {
+    value: string;
+  };
+
   export type Props = {
-    onFilterChange: Action.GenericAction<onFilterChangeProps>;
+    onChange: Action.GenericAction<onChangeProps>;
+    options: Option[];
+    title: string;
+    value: any;
   };
 }
 
-export type ExpensesFilter = Component.GenericComponent<ExpensesFilter.Props>;
+export type DropdownInput = Component.GenericComponent<DropdownInput.Props>;
