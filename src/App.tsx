@@ -34,7 +34,7 @@ export default function App() {
   const handleAddExpense = ({
     newExpense
   }: NewExpenseType.onAddExpenseProps) => {
-    setExpenseData((prev) => [...prev, newExpense]);
+    setExpenseData((prev) => [newExpense, ...prev]);
   };
 
   return (
