@@ -1,5 +1,10 @@
 import { useState } from "react";
-import { ExpenseItem, Card, DropdownInput } from "../../components";
+import {
+  Card,
+  DropdownInput,
+  ExpensesChart,
+  ExpensesList
+} from "../../components";
 import {
   Expenses as TypeDef,
   DropdownInput as DropdownType
@@ -30,17 +35,18 @@ export const Expenses: TypeDef = (props) => {
     return expense.date.getFullYear().toString() === filter;
   };
 
+  const filteredData = expenseData.filter(applyFilter);
+
   return (
     <Card className="expenses">
+      <ExpensesChart expenseData={filteredData} />
       <DropdownInput
         onChange={handleFilterChange}
         value={filter}
         title="Filter by year"
         options={yearOptions}
       />
-      {expenseData.filter(applyFilter).map((expense) => (
-        <ExpenseItem key={expense.id} {...expense} />
-      ))}
+      <ExpensesList items={filteredData} emptyLabel="No expenses found..." />
     </Card>
   );
 };

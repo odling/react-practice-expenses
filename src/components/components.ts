@@ -53,6 +53,7 @@ export type NewExpense = Component.GenericComponent<NewExpense.Props>;
 namespace ExpenseForm {
   export type Props = {
     onSubmit: NewExpense.Props["onAddExpense"];
+    onCancel?: Action.GenericAction<void>;
   };
 }
 
@@ -76,3 +77,43 @@ export namespace DropdownInput {
 }
 
 export type DropdownInput = Component.GenericComponent<DropdownInput.Props>;
+
+namespace ExpensesList {
+  export type Props = {
+    items: Expenses.Expense[];
+    emptyLabel: string;
+  };
+}
+
+export type ExpensesList = Component.GenericComponent<ExpensesList.Props>;
+
+namespace Chart {
+  type DataPoint = {
+    value: number;
+    label: string;
+    id?: string;
+  };
+  export type Props = {
+    dataPoints: DataPoint[];
+  };
+}
+
+export type Chart = Component.GenericComponent<Chart.Props>;
+
+namespace ChartBar {
+  export type Props = {
+    value: number;
+    maxValue: number;
+    label: string;
+  };
+}
+
+export type ChartBar = Component.GenericComponent<ChartBar.Props>;
+
+namespace ExpensesChart {
+  export type Props = {
+    expenseData: Expenses.Expense[];
+  };
+}
+
+export type ExpensesChart = Component.GenericComponent<ExpensesChart.Props>;

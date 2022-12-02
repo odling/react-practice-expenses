@@ -9,7 +9,7 @@ const initialFormValues = {
 };
 
 export const ExpenseForm: TypeDef = (props) => {
-  const { onSubmit } = props;
+  const { onSubmit, onCancel } = props;
   const [formInputs, setFormInputs] = useState<typeof initialFormValues>(
     initialFormValues
   );
@@ -33,6 +33,12 @@ export const ExpenseForm: TypeDef = (props) => {
       }
     });
     setFormInputs(initialFormValues);
+  };
+
+  const handleCancel = (e: React.FormEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    if (!onCancel) return;
+    onCancel();
   };
 
   return (
@@ -67,6 +73,7 @@ export const ExpenseForm: TypeDef = (props) => {
         />
       </div>
       <div className="new-expense__actions">
+        <button onClick={handleCancel}>Cancel</button>
         <button type="submit">Add Expense</button>
       </div>
     </form>

@@ -1,0 +1,6 @@
+.expenses-chart > label {
+  color: white;
+  font-weight: bold;
+  display: block;
+  padding: 16px;
+}

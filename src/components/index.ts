@@ -5,3 +5,7 @@ export { Card } from "./Card/Card.component";
 export { NewExpense } from "./NewExpense/NewExpense.component";
 export { ExpenseForm } from "./ExpenseForm/ExpenseForm.component";
 export { DropdownInput } from "./DropdownInput/DropdownInput.component";
+export { ExpensesList } from "./ExpensesList/ExpensesList.component";
+export { Chart } from "./ExpensesChart/Chart/Chart.component";
+export { ChartBar } from "./ExpensesChart/ChartBar/ChartBar.component";
+export { ExpensesChart } from "./ExpensesChart/ExpensesChart.component";

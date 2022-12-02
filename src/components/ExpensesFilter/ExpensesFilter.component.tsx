@@ -14,7 +14,7 @@ export const DropdownInput: TypeDef = (props) => {
         <label>{title}</label>
         <select onChange={updateSelection} value={value}>
           {options.map((year) => (
-            <option key={year} value={year}>
+            <option key={year.label} value={year.value}>
               {year}
             </option>
           ))}
