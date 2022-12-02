@@ -28,7 +28,7 @@ export const ExpenseForm: TypeDef = (props) => {
       newExpense: {
         title: formInputs.title,
         date: new Date(formInputs.date),
-        amount: parseFloat(formInputs.amount),
+        amount: Number(formInputs.amount),
         id: Math.random().toString()
       }
     });
